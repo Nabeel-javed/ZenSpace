@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ZenSpace AI
 
-# Run and deploy your AI Studio app
+An AI-powered room decluttering assistant that analyzes photos of your space and provides personalized organization advice.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1gcl9vFuhs-61AAxEPJ-Ghg9x8PWFuErl
+- **Visual Analysis** - Upload a photo of any room and get instant AI analysis of clutter hotspots
+- **Actionable Steps** - Receive step-by-step decluttering checklists tailored to your space
+- **Expert Chat** - Chat with the AI assistant for specific advice on storage and design
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Google Gemini AI
+- Three.js / React Three Fiber
+- Framer Motion
 
+## Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js 18+
+- A Google Gemini API key
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd zenspace
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env.local` file in the project root and add your Gemini API key:
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+   Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## License
+
+MIT
