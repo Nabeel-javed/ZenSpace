@@ -10,15 +10,15 @@ interface AnalysisViewProps {
   onReset: () => void;
 }
 
-export const AnalysisView: FC<AnalysisViewProps> = ({ 
-  imageState, 
-  analysis, 
-  isLoading, 
-  onReset 
+export const AnalysisView: FC<AnalysisViewProps> = ({
+  imageState,
+  analysis,
+  isLoading,
+  onReset
 }) => {
   return (
     <div className="flex flex-col gap-8 animate-fade-in pb-20">
-      <button 
+      <button
         onClick={onReset}
         className="self-start group flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors font-medium text-sm backdrop-blur-sm bg-white/30 px-4 py-2 rounded-full border border-white/50"
       >
@@ -30,10 +30,10 @@ export const AnalysisView: FC<AnalysisViewProps> = ({
         {/* Left Column: Image */}
         <div className="glass-panel p-3 rounded-3xl shadow-xl transition-all duration-300 sticky top-24">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-100">
-             {imageState.previewUrl && (
-              <img 
-                src={imageState.previewUrl} 
-                alt="Room to organize" 
+            {imageState.previewUrl && (
+              <img
+                src={imageState.previewUrl}
+                alt="Room to organize"
                 className="w-full h-full object-cover"
               />
             )}
@@ -62,34 +62,34 @@ export const AnalysisView: FC<AnalysisViewProps> = ({
             ${isLoading ? 'opacity-80 scale-[0.98]' : 'opacity-100 scale-100'}
         `}>
           {isLoading ? (
-             <div className="space-y-6 animate-pulse">
-               <div className="h-8 bg-stone-200/50 rounded-lg w-3/4"></div>
-               <div className="space-y-3">
-                 <div className="h-4 bg-stone-100/50 rounded w-full"></div>
-                 <div className="h-4 bg-stone-100/50 rounded w-full"></div>
-                 <div className="h-4 bg-stone-100/50 rounded w-5/6"></div>
-               </div>
-               <div className="h-40 bg-stone-50/50 rounded-2xl w-full mt-8 border border-white/50"></div>
-               <div className="space-y-3 mt-8">
-                 <div className="h-4 bg-stone-100/50 rounded w-full"></div>
-                 <div className="h-4 bg-stone-100/50 rounded w-3/4"></div>
-               </div>
-             </div>
+            <div className="space-y-6 animate-pulse">
+              <div className="h-8 bg-stone-200/50 rounded-lg w-3/4"></div>
+              <div className="space-y-3">
+                <div className="h-4 bg-stone-100/50 rounded w-full"></div>
+                <div className="h-4 bg-stone-100/50 rounded w-full"></div>
+                <div className="h-4 bg-stone-100/50 rounded w-5/6"></div>
+              </div>
+              <div className="h-40 bg-stone-50/50 rounded-2xl w-full mt-8 border border-white/50"></div>
+              <div className="space-y-3 mt-8">
+                <div className="h-4 bg-stone-100/50 rounded w-full"></div>
+                <div className="h-4 bg-stone-100/50 rounded w-3/4"></div>
+              </div>
+            </div>
           ) : analysis ? (
             <div className="animate-slide-up">
-               <div className="flex items-center gap-3 mb-8 pb-6 border-b border-stone-200/50">
-                 <div className="bg-gradient-to-br from-teal-400 to-teal-600 p-2.5 rounded-xl text-white shadow-lg shadow-teal-500/20">
-                   <Sparkles className="w-5 h-5" />
-                 </div>
-                 <h2 className="text-3xl font-serif font-bold text-stone-800 tracking-tight">Your Action Plan</h2>
-               </div>
-               <div className="prose-container">
-                 <MarkdownRenderer content={analysis.text} />
-               </div>
-               
-               <div className="mt-8 pt-6 border-t border-stone-200/50 text-center">
-                  <p className="text-stone-500 italic text-sm">Ready for the next step? Ask the ZenSpace Assistant.</p>
-               </div>
+              <div className="flex items-center gap-3 mb-8 pb-6 border-b border-stone-200/50">
+                <div className="bg-gradient-to-br from-teal-400 to-teal-600 p-2.5 rounded-xl text-white shadow-lg shadow-teal-500/20">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h2 className="text-3xl font-serif font-bold text-stone-800 tracking-tight">Your Action Plan</h2>
+              </div>
+              <div className="prose-container">
+                <MarkdownRenderer content={analysis.text} />
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-stone-200/50 text-center">
+                <p className="text-stone-500 italic text-sm">Ready for the next step? Ask the ZenSpace Assistant.</p>
+              </div>
             </div>
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-stone-400">
