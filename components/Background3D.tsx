@@ -29,16 +29,26 @@ const Particles = (props: any) => {
     );
 };
 
+import zenBg from '../assets/zen_background.png';
+
 export const Background3D = () => {
     return (
-        <div className="fixed inset-0 -z-10 bg-stone-50">
+        <div className="fixed inset-0 -z-10">
+            {/* Background Image */}
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
+                style={{ backgroundImage: `url(${zenBg})` }}
+            />
+
+            {/* 3D Particles Overlay */}
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <Float speed={2} rotationIntensity={1} floatIntensity={1}>
                     <Particles />
                 </Float>
             </Canvas>
+
             {/* Gradient Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/50 pointer-events-none" />
         </div>
     );
 };

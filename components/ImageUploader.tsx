@@ -115,7 +115,7 @@ export const ImageUploader: FC<ImageUploaderProps> = ({ onImageSelected }) => {
         </div>
       </div>
 
-      <p className="text-center text-xs text-stone-500 mt-6 font-medium tracking-wide opacity-60">
+      <p className="text-center text-xs text-black mt-6 font-medium tracking-wide opacity-60">
         SUPPORTED FORMATS: JPG, PNG, WEBP — MAX SIZE 10MB
       </p>
     </div>
