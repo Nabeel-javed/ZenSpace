@@ -1,7 +1,7 @@
-import React from 'react';
 import { MarkdownRenderer } from './MarkdownRenderer';
-import { ArrowLeft, RefreshCw, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowLeft, RefreshCw, CheckCircle2, Sparkles } from './Icons';
 import { ImageState, AnalysisResult } from '../types';
+import type { FC } from 'react';
 
 interface AnalysisViewProps {
   imageState: ImageState;
@@ -10,7 +10,7 @@ interface AnalysisViewProps {
   onReset: () => void;
 }
 
-export const AnalysisView: React.FC<AnalysisViewProps> = ({ 
+export const AnalysisView: FC<AnalysisViewProps> = ({ 
   imageState, 
   analysis, 
   isLoading, 

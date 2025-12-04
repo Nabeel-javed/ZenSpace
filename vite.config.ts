@@ -18,6 +18,17 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        target: 'es2020',
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              'react-vendor': ['react', 'react-dom'],
+              'markdown': ['react-markdown'],
+            }
+          }
+        }
       }
     };
 });

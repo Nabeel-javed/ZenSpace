@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
-import { Upload, Image as ImageIcon, Camera, ArrowRight } from 'lucide-react';
+import { useRef, useState } from 'react';
+import type { FC, DragEvent, ChangeEvent } from 'react';
+import { Upload, ImageIcon, Camera } from './Icons';
 import { ImageState } from '../types';
 import { fileToBase64 } from '../services/geminiService';
 
@@ -7,7 +8,7 @@ interface ImageUploaderProps {
   onImageSelected: (imageState: ImageState) => void;
 }
 
-export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelected }) => {
+export const ImageUploader: FC<ImageUploaderProps> = ({ onImageSelected }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
 

@@ -1,12 +1,13 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback, lazy, Suspense } from 'react';
 import { ImageUploader } from './components/ImageUploader';
 import { AnalysisView } from './components/AnalysisView';
-import { ChatInterface } from './components/ChatInterface';
 import { ImageState, AnalysisResult } from './types';
 import { analyzeRoomImage } from './services/geminiService';
-import { Sparkles, LayoutGrid } from 'lucide-react';
+import { Sparkles, LayoutGrid } from './components/Icons';
 
-const App: React.FC = () => {
+const ChatInterface = lazy(() => import('./components/ChatInterface').then(m => ({ default: m.ChatInterface })));
+
+const App = () => {
   const [imageState, setImageState] = useState<ImageState | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
@@ -122,7 +123,9 @@ const App: React.FC = () => {
       )}
 
       {/* Chatbot Overlay */}
-      <ChatInterface />
+      <Suspense fallback={null}>
+        <ChatInterface />
+      </Suspense>
     </div>
   );
 };

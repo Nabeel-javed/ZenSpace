@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Sparkles } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import type { FC, FormEvent } from 'react';
+import { MessageSquare, X, Send, Sparkles } from './Icons';
 import { ChatService } from '../services/geminiService';
 import { ChatMessage } from '../types';
 import { MarkdownRenderer } from './MarkdownRenderer';
 
-export const ChatInterface: React.FC = () => {
+export const ChatInterface: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: 'model', text: "Hi! I'm ZenSpace. Ask me anything about organizing your home, cleaning tips, or decluttering methods." }
