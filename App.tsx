@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { ImageUploader } from './components/ImageUploader';
 import { AnalysisView } from './components/AnalysisView';
 import { ChatInterface } from './components/ChatInterface';
-import { ZenBackground } from './components/ZenBackground';
 import { ImageState, AnalysisResult } from './types';
 import { analyzeRoomImage } from './services/geminiService';
 import { Sparkles, LayoutGrid } from 'lucide-react';
@@ -41,8 +40,6 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen font-sans text-stone-800 selection:bg-teal-100 selection:text-teal-900">
       
-      {/* 3D Background Layer */}
-      <ZenBackground />
 
       {/* Navbar */}
       <nav className="sticky top-0 z-40 w-full bg-white/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
